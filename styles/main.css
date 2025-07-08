@@ -1,0 +1,705 @@
+/* Basic Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0056b3; /* Example: A shade of blue */
+    --secondary-color: #28a745; /* Example: A shade of green */
+    --background-color: #f8f9fa; /* Light gray */
+    --text-color: #333; /* Dark gray */
+    --light-text-color: #f8f9fa;
+    --dark-section-bg: #495057; /* For sections like Events */
+    --header-bg: #fff;
+    --footer-bg: #343a40; /* Darker gray for footer */
+    --border-color: #dee2e6;
+    --card-bg: #fff;
+
+    --font-family-base: 'Roboto', Arial, sans-serif;
+    --font-family-heading: 'Roboto', Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-family-base);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-heading);
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Utility Classes */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #004085;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: var(--light-text-color);
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #218838;
+    text-decoration: none;
+}
+
+
+/* Header Styling */
+.site-header {
+    background-color: var(--header-bg);
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.chamber-logo {
+    height: 60px;
+    margin-right: 10px;
+}
+
+.site-title {
+    font-size: 1.8rem;
+    margin: 0;
+    line-height: 1.2;
+    color: var(--text-color);
+}
+
+.site-title span {
+    font-size: 0.8em;
+    display: block;
+    color: var(--primary-color);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-color);
+    z-index: 1001;
+}
+
+.theme-toggle {
+    margin-left: 1rem; /* Default spacing if no specific order is set */
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Main Content Styling */
+.homepage-main {
+    flex-grow: 1;
+    padding: 1rem 0;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    /* --- ADD THESE TWO LINES --- */
+    max-width: 1200px; /* Limits the maximum width */
+    margin: 0 auto;    /* Centers the block on the page */
+    /* -------------------------- */
+    width: 100%;       /* Ensures it still takes full width up to max-width */
+    min-height: 250px; /* A minimum height for smaller screens */
+    height: 50vw;      /* Height scales with viewport width for aspect ratio */
+    max-height: 550px; /* A maximum height for very large screens */
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--light-text-color);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.hero-overlay h2 {
+    color: var(--light-text-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Home Grid (Events, Current Weather, Forecast) */
+.home-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+    padding: 0 1rem;
+}
+
+.grid-item {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.events-section {
+    background-color: var(--dark-section-bg);
+    color: var(--light-text-color);
+}
+
+.events-section h2 {
+    color: var(--light-text-color);
+}
+
+.events-section ul {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.events-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.events-section .btn-secondary {
+    margin-top: 1rem;
+}
+
+/* Weather sections are now independent grid items */
+.weather-section h2, .forecast-section h2 {
+    color: var(--text-color);
+}
+
+.current-weather-display {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.current-weather-display img {
+    margin: 0 auto 0.5rem;
+    width: 80px;
+    height: 80px;
+}
+
+.current-weather-display p {
+    margin-bottom: 0.3rem;
+}
+
+.current-weather-display #current-temp {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.forecast-day {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+.forecast-day:last-child {
+    border-bottom: none;
+}
+
+
+/* Business Spotlights */
+.business-spotlights {
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+    padding: 0 1rem;
+}
+
+.business-spotlights h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: var(--primary-color);
+}
+
+.spotlight-grid {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.business-card {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.business-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.business-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+}
+
+.business-card .tagline {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 0.8rem;
+}
+
+.business-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Footer Styling */
+.site-footer {
+    background-color: var(--footer-bg);
+    color: var(--light-text-color);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    gap: 1.5rem;
+}
+
+.chamber-contact-info,
+.social-media,
+.project-info {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+
+.site-footer h3 {
+    color: var(--light-text-color);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.site-footer p {
+    font-size: 0.9rem;
+    margin-bottom: 0.4rem;
+}
+
+.site-footer a {
+    color: var(--light-text-color);
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: var(--primary-color);
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-media img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.2s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+.project-info {
+    text-align: right;
+}
+
+
+/* --- Responsive Design (Media Queries) --- */
+
+/* Mobile adjustments (up to 768px, typical tablet portrait) */
+@media (max-width: 768px) {
+    .site-header .header-content {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .main-nav {
+        width: auto;
+        margin-top: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        gap: 0.5rem;
+        background-color: var(--header-bg);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding: 1rem;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+        z-index: 999;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-out;
+    }
+
+    .nav-links.show {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: 2; /* Burger is to the right of theme toggle */
+        margin-left: 10px;
+    }
+
+    .theme-toggle {
+        order: 1; /* Theme toggle is to the left of burger on mobile */
+        margin-left: 0;
+    }
+
+    .hero-overlay h2 {
+        font-size: 1.8rem;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .events-section, .weather-section, .forecast-section {
+        grid-column: span 1;
+    }
+
+    .spotlight-grid {
+        flex-direction: column;
+        flex-wrap: wrap;
+        overflow-x: visible;
+    }
+    .business-card {
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .chamber-contact-info,
+    .project-info {
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    .social-media {
+        order: -1;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Tablet adjustments (between 769px and 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .nav-links {
+        display: flex;
+        order: 1;
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: none;
+        padding: 0;
+        width: auto;
+        max-width: none;
+        gap: 1.5rem;
+    }
+
+    .nav-links li {
+        width: auto;
+        text-align: left;
+    }
+     .nav-links a {
+        border-bottom: none;
+    }
+
+    .theme-toggle {
+        order: 2;
+        margin-left: 1.5rem;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    /* Home Grid for Tablet */
+    .home-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns for tablet */
+        gap: 1.5rem;
+    }
+
+    .events-section, .weather-section, .forecast-section {
+        grid-column: span 1;
+    }
+
+    .spotlight-grid {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .business-card {
+        flex: 0 0 calc(33.33% - 1rem);
+        max-width: none;
+    }
+}
+
+/* Desktop adjustments (larger than 1025px) */
+@media (min-width: 1025px) {
+    /* Header/Navigation specific for desktop: Moon emoji on the right */
+    .main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .main-nav .nav-links {
+        display: flex;
+        order: 1;
+        margin-right: 1.5rem;
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background: none;
+        padding: 0;
+        width: auto;
+        max-width: none;
+        gap: 1.5rem;
+    }
+
+    .nav-links li {
+        width: auto;
+        text-align: left;
+    }
+    .nav-links a {
+        border-bottom: none;
+    }
+
+    .main-nav .theme-toggle {
+        order: 2;
+        margin-left: 0;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+
+    /* Home Grid for Desktop: Events 50%, Current Weather 25%, Forecast 25% */
+    .home-grid {
+        grid-template-columns: 2fr 1fr 1fr; /* Events (50%), Current Weather (25%), Forecast (25%) */
+        gap: 1.5rem;
+    }
+
+    .events-section {
+        grid-column: span 1;
+    }
+    .weather-section {
+        grid-column: span 1;
+    }
+    .forecast-section {
+        grid-column: span 1;
+    }
+
+    .spotlight-grid {
+        flex-wrap: nowrap;
+    }
+     .business-card {
+        flex: 1;
+        max-width: none;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    --background-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --primary-color: #87ceeb;
+    --secondary-color: #6cda6c;
+    --header-bg: #222;
+    --footer-bg: #111;
+    --dark-section-bg: #333;
+    --border-color: #444;
+    --card-bg: #2b2b2b;
+}
+
+body.dark-mode .site-title {
+    color: var(--text-color);
+}
+
+body.dark-mode .site-title span {
+    color: var(--primary-color);
+}
+
+body.dark-mode .nav-links a {
+    color: var(--text-color);
+}
+
+body.dark-mode .dark-mode-toggle {
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
