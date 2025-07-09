@@ -1,0 +1,102 @@
+/* styles/larger.css */
+
+/* Media Query for Larger Screens (e.g., tablets and desktops) */
+@media (min-width: 768px) {
+    header {
+        flex-direction: row; /* Align header items horizontally */
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+    }
+
+    .header-content {
+        justify-content: flex-start; /* Align logo and name to the left */
+        gap: 1rem; /* Space between logo and name */
+        width: auto; /* Allow content to dictate width */
+    }
+
+    header span {
+        text-align: left;
+        flex-grow: 0; /* Don't force name to take all available space */
+    }
+
+    /* Hide hamburger button on larger screens */
+    .menu-button {
+        display: none;
+    }
+
+    /* Navigation - Desktop Styles (Flexbox) */
+    #main-nav {
+        max-height: none; /* Always visible */
+        width: auto;
+        overflow: visible;
+    }
+
+    #main-nav ul {
+        flex-direction: row; /* Horizontal navigation */
+        gap: 1rem; /* Space between menu items */
+    }
+
+    #main-nav ul li {
+        border-bottom: none; /* No borders between items */
+    }
+
+    #main-nav ul li a {
+        background-color: transparent; /* Transparent background for nav links */
+        padding: 0.5rem 1rem;
+        transition: background-color 0.2s ease;
+    }
+
+    #main-nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Subtle background on hover */
+    }
+
+    #main-nav ul li a.active {
+        background-color: rgba(255, 255, 255, 0.2); /* Active state background */
+    }
+
+    /* Main Content Layout for Larger Screens */
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two columns for sections */
+        gap: 1.5rem;
+        padding: 1.5rem; /* More padding on larger screens */
+    }
+
+    /* Adjust specific sections if needed */
+    #about-me {
+        grid-column: 1 / 2; /* About Me in first column */
+    }
+
+    #assignments {
+        grid-column: 2 / 3; /* Assignments in second column */
+    }
+
+    #course-certificate {
+        grid-column: 1 / -1; /* Course Certificate spans full width */
+    }
+
+    .courses-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid for course cards */
+    }
+
+    /* Footer - Example for different layout */
+    footer {
+        display: flex;
+        flex-direction: column; /* Keep stacked on desktop for simplicity, or change to row */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-media {
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Optional: Even larger screen layout if desired (e.g., 1024px) */
+@media (min-width: 1024px) {
+    /* You could add a three-column layout here for main sections if content allows */
+    /* main {
+        grid-template-columns: 1fr 1fr 1fr;
+    } */
+}

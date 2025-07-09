@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timbuktu Chamber of Commerce - Home</title>
+    <meta name="description" content="Official website for the Timbuktu Chamber of Commerce, promoting local businesses and community growth.">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/chamber-logo.png" alt="Timbuktu Chamber of Commerce Logo" class="chamber-logo">
+                <h1 class="site-title">Timbuktu <br><span>Chamber of Commerce</span></h1>
+            </div>
+            <nav class="main-nav">
+                <div class="theme-toggle">
+                    <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="homepage-main">
+        <section class="hero-section">
+            <img src="images/hero-image.webp" alt="Scenic view of Timbuktu" class="hero-image">
+            <div class="hero-overlay">
+                <h2>Welcome to the Timbuktu Chamber of Commerce!</h2>
+                <a href="#" class="btn-primary">Keynote Tickets</a>
+            </div>
+        </section>
+
+        <section class="home-grid">
+            <div class="grid-item events-section">
+                <h2>Events</h2>
+                <p>Check out our upcoming events and workshops!</p>
+                <ul>
+                    <li>Networking Mixer - July 15th</li>
+                    <li>Small Business Workshop - July 20th</li>
+                    <li>Community Fair - August 5th</li>
+                </ul>
+                <a href="events.html" class="btn-secondary">View All Events</a>
+            </div>
+
+            <div class="grid-item weather-section">
+                <h2>Current Weather</h2>
+                <div class="current-weather-display">
+                    <img id="weather-icon" src="images/weather-placeholder.svg" alt="Weather Icon">
+                    <p><span id="current-temp">75°F</span></p>
+                    <p id="weather-condition">Party Cloudy</p>
+                    <p>High: <span id="high-temp">85°</span> Low: <span id="low-temp">52°</span></p>
+                    <p>Humidity: <span id="humidity">34%</span></p>
+                    <p>Sunrise: <span id="sunrise">7:30am</span> Sunset: <span id="sunset">9:59pm</span></p>
+                </div>
+            </div>
+
+            <div class="grid-item forecast-section">
+                <h2>Weather Forecast</h2>
+                <div class="forecast-day">
+                    <p>Today: <span id="forecast-today">90°F</span></p>
+                </div>
+                <div class="forecast-day">
+                    <p>Wednesday: <span id="forecast-wed">89°F</span></p>
+                </div>
+                <div class="forecast-day">
+                    <p>Thursday: <span id="forecast-thu">68°F</span></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="business-spotlights">
+            <h2>Business Spotlights</h2>
+            <div class="spotlight-grid">
+                <div class="business-card">
+                    <img src="images/business1-placeholder.png" alt="Business 1 Logo">
+                    <h3>Business Name 1</h3>
+                    <p class="tagline">Business Tag Line</p>
+                    <p>EMAIL: info@gmail.com</p>
+                    <p>PHONE: 800-555-1234</p>
+                    <p>URL: <a href="http://mybusiness.com">mybusiness.com</a></p>
+                </div>
+                <div class="business-card">
+                    <img src="images/business2-placeholder.png" alt="Business 2 Logo">
+                    <h3>Business Name 2</h3>
+                    <p class="tagline">Business Tag Line</p>
+                    <p>EMAIL: info@gmail.com</p>
+                    <p>PHONE: 800-555-1234</p>
+                    <p>URL: <a href="http://mybusiness.com">mybusiness.com</a></p>
+                </div>
+                <div class="business-card">
+                    <img src="images/business3-placeholder.png" alt="Business 3 Logo">
+                    <h3>Business Name 3</h3>
+                    <p class="tagline">Business Tag Line</p>
+                    <p>EMAIL: info@gmail.com</p>
+                    <p>PHONE: 800-555-1234</p>
+                    <p>URL: <a href="http://mybusiness.com">mybusiness.com</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="chamber-contact-info">
+                <h3>Timbuktu Chamber of Commerce</h3>
+                <p>10 Rue De La Paix</p>
+                <p>Timbuktu, Mali 999</p>
+                <p>Email: <a href="mailto:info@timbuktuchamber.org">info@timbuktuchamber.org</a></p>
+                <p>Phone: (223) 555-2300</p>
+            </div>
+            <div class="social-media">
+                <a href="#" aria-label="YouTube"><img src="images/youtube.svg" alt="YouTube"></a>
+                <a href="#" aria-label="Twitter"><img src="images/twitter.svg" alt="Twitter"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            </div>
+            <div class="project-info">
+                <p>WDD231 Class Project</p>
+                <p>Marie Martinez</p>
+                <p>&copy; <span id="currentyear"></span> Timbuktu Chamber of Commerce</p>
+                <p>Last Modification: <span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
