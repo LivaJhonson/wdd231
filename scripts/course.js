@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
             technology: [
                 'Python'
             ],
-            completed: true // CHANGE this to true if YOU completed this course
+            completed: true 
         },
         {
             subject: 'WDD',
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'HTML',
                 'CSS'
             ],
-            completed: true // CHANGE this to true if YOU completed this course
+            completed: true 
         },
         {
             subject: 'CSE',
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             technology: [
                 'Python'
             ],
-            completed: true // CHANGE this to true if YOU completed this course
+            completed: true 
         },
         {
             subject: 'CSE',
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             technology: [
                 'C#'
             ],
-            completed: true // CHANGE this to true if YOU completed this course
+            completed: true 
         },
         {
             subject: 'WDD',
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'CSS',
                 'JavaScript'
             ],
-            completed: true // CHANGE this to true if YOU completed this course
+            completed: true 
         },
         {
             subject: 'WDD',
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'CSS',
                 'JavaScript'
             ],
-            completed: false // CHANGE this to true if YOU completed this course
+            completed: false 
         }
     ];
 
