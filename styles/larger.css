@@ -92,11 +92,3 @@
         margin-bottom: 0.5rem;
     }
 }
-
-/* Optional: Even larger screen layout if desired (e.g., 1024px) */
-@media (min-width: 1024px) {
-    /* You could add a three-column layout here for main sections if content allows */
-    /* main {
-        grid-template-columns: 1fr 1fr 1fr;
-    } */
-}
