@@ -1,16 +1,18 @@
 /* General Styles */
 :root {
-    /* Define your color palette */
-    --primary-color: #1a3045; /* Dark blue */
-    --secondary-color: #6c757d; /* Grey */
-    --accent-color: #1c7631; /* Green */
-    --background-color: #f8f9fa; /* Light grey */
-    --text-color: #343a40; /* Dark text */
-    --completed-card-bg: #d4edda; /* Light green for completed cards */
-    --completed-card-border: #28a745; /* Darker green border */
+    /* Define your color palette - adjust these as desired! */
+    --primary-color: #1a3045; /* Dark blue - for headers, links, main buttons */
+    --secondary-color: #6c757d; /* Grey - for filter buttons, subtle text */
+    --accent-color: #1c7631; /* Green - for completed items, success indicators */
+    --background-color: #f8f9fa; /* Light grey - general page background */
+    --text-color: #343a40; /* Dark text - for body text */
+    --card-background: #ffffff; /* White - for section and card backgrounds (ADDED THIS) */
+    --card-border: #e0e0e0; /* Light grey - card borders (ADDED THIS) */
+    --completed-card-bg: #d4edda; /* Light green - for completed course cards */
+    --completed-card-border: #28a745; /* Darker green - border for completed cards */
 
     /* Define your font family from Google Fonts */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Ensure this matches your Google Fonts link in HTML */
 }
 
 body {
@@ -78,6 +80,7 @@ header span {
     font-size: 2rem;
     cursor: pointer;
     display: block; /* Always visible on small screens */
+    padding: 0 0.5rem; /* Ensure clickable area, ADDED THIS */
 }
 
 /* Navigation - Mobile Styles */
@@ -89,7 +92,7 @@ header span {
 }
 
 #main-nav.open {
-    max-height: 200px; /* Adjust based on content */
+    max-height: 300px; /* Adjusted max-height to be safer for varying menu items */
 }
 
 #main-nav ul {
@@ -138,11 +141,16 @@ main {
 }
 
 section {
-    background-color: white;
+    background-color: var(--card-background); /* Using variable for consistency */
     padding: 1.5rem;
     margin-bottom: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Added specific h2 centering for the certificate section */
+#course-certificate h2 {
+    text-align: center; /* THIS IS THE MAIN ADDITION FOR CENTERING */
 }
 
 /* Images */
@@ -165,18 +173,36 @@ img {
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-    border: 1px solid #ccc;
-    text-align: center;
+    border: 1px solid var(--card-border); /* Using variable for consistency */
+    text-align: left; /* Changed to left align for better readability of descriptions */
+    display: flex; /* Added for vertical stacking of content */
+    flex-direction: column; /* Added for vertical stacking of content */
 }
 
 .course-card h3 {
     margin-top: 0;
+    margin-bottom: 0.5rem; /* Add some space below the title */
     color: var(--primary-color);
 }
 
 .course-card p {
     font-size: 0.9em;
     color: var(--text-color);
+    margin-bottom: 0.3em; /* Tighten up paragraph spacing */
+}
+
+.course-card p:last-of-type { /* Adjust last paragraph if it's the status */
+    margin-bottom: 0;
+}
+
+.course-card .completion-status {
+    font-size: 0.85em;
+    font-style: italic;
+    margin-top: auto; /* Push completion status to the bottom if cards have varying heights */
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--card-border); /* Separator for status */
+    text-align: center; /* Center the status */
+    color: var(--secondary-color); /* Default color for status */
 }
 
 /* Style for Completed Courses */
@@ -188,6 +214,11 @@ img {
 
 .course-card.completed h3 {
     color: var(--accent-color);
+}
+
+.course-card.completed .completion-status {
+    color: var(--accent-color); /* Make completed status text green */
+    border-top: 1px solid var(--accent-color);
 }
 
 /* Filter Buttons */
@@ -207,16 +238,18 @@ img {
     border-radius: 5px;
     cursor: pointer;
     font-size: 0.9em;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.1s ease; /* Added transform transition */
 }
 
 .filter-button:hover {
     background-color: #5a6268;
+    transform: translateY(-2px); /* Slight lift on hover, ADDED THIS */
 }
 
 .filter-button.active-filter {
     background-color: var(--primary-color);
     font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Added shadow for active filter */
 }
 
 /* Credits Summary */
@@ -225,6 +258,7 @@ img {
     font-weight: bold;
     margin-top: 1.5rem;
     font-size: 1.1em;
+    color: var(--primary-color); /* Ensure this uses primary color for consistency */
 }
 
 /* Footer */
@@ -248,6 +282,11 @@ footer {
     height: 30px; /* Size for social icons */
     width: auto;
     filter: invert(1); /* Example: Invert SVG color for contrast */
+    transition: transform 0.2s ease; /* Added transform transition for social icons */
+}
+
+.social-media img:hover {
+    transform: scale(1.1); /* Slight enlarge on hover, ADDED THIS */
 }
 
 footer p {
