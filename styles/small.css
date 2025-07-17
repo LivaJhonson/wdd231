@@ -202,7 +202,7 @@ img {
     padding-top: 0.5rem;
     border-top: 1px dashed var(--card-border); /* Separator for status */
     text-align: center; /* Center the status */
-    color: var(--secondary-color); /* Default color for status */
+    color: #4a5156; /* color for status */
 }
 
 /* Style for Completed Courses */
