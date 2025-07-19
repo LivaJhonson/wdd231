@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timbuktu Chamber of Commerce - Directory</title>
+    <meta name="description" content="Explore local businesses and members of the Timbuktu Chamber of Commerce. Find addresses, phone numbers, websites, and more.">
+    <meta name="author" content="Nirintsoa Liva Jhonson Rabariharinjaka">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Timbuktu Chamber of Commerce Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yourwebsite.com/chamber/images/og-directory-image.jpg"> <meta property="og:url" content="https://yourwebsite.com/chamber/directory.html"> <meta property="og:description" content="Discover businesses in Timbuktu, Mali, through the Chamber of Commerce directory.">
+
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/main.js" defer></script>
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/chamber-logo.png" alt="Timbuktu Chamber of Commerce Logo" class="chamber-logo">
+                <h1 class="site-title">Timbuktu <br><span>Chamber of Commerce</span></h1>
+            </div>
+            <nav class="main-nav">
+                <div class="theme-toggle">
+                    <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html" class="active">Directory</a></li> <li><a href="join.html">Join</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Business Directory</h2>
+        <div class="view-toggle">
+            <button id="grid-view-btn">Grid View</button>
+            <button id="list-view-btn">List View</button>
+        </div>
+        <section class="member-display">
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="chamber-contact-info">
+                <h3>Timbuktu Chamber of Commerce</h3>
+                <p>10 Rue De La Paix</p>
+                <p>Timbuktu, Mali 999</p>
+                <p>Email: <a href="mailto:info@timbuktuchamber.org">info@timbuktuchamber.org</a></p>
+                <p>Phone: (223) 555-2300</p>
+            </div>
+            <div class="social-media">
+                <a href="#" aria-label="YouTube"><img src="images/youtube.svg" alt="YouTube"></a>
+                <a href="#" aria-label="Twitter"><img src="images/twitter.svg" alt="Twitter"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            </div>
+            <div class="project-info">
+                <p>WDD231 Class Project</p>
+                <p>Chrisostome</p>
+                <p>&copy; <span id="currentyear"></span> Timbuktu Chamber of Commerce</p>
+                <p>Last Modification: <span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

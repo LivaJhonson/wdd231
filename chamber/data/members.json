@@ -1,0 +1,65 @@
+[
+    {
+      "name": "Acme Corporation",
+      "address": "123 Business Lane, Anytown, USA",
+      "phone": "555-123-4567",
+      "website": "https://www.acmecorp.com",
+      "image": "acme_logo.webp",
+      "membershipLevel": "gold",
+      "otherInfo": "Specializing in all things Acme since 1950."
+    },
+    {
+      "name": "Widgets R Us",
+      "address": "456 Main Street, Anytown, USA",
+      "phone": "555-987-6543",
+      "website": "https://www.widgetsrus.net",
+      "image": "widgets_r_us_logo.webp",
+      "membershipLevel": "silver",
+      "otherInfo": "Your one-stop shop for high-quality widgets."
+    },
+    {
+      "name": "Local Bakery & Cafe",
+      "address": "789 Elm Avenue, Anytown, USA",
+      "phone": "555-555-1111",
+      "website": "https://www.localbakerycafe.com",
+      "image": "bakery_cafe_logo.webp",
+      "membershipLevel": "member",
+      "otherInfo": "Freshly baked goods and gourmet coffee daily."
+    },
+    {
+      "name": "Tech Solutions Inc.",
+      "address": "101 Innovation Drive, Anytown, USA",
+      "phone": "555-222-3333",
+      "website": "https://www.techsolutions.com",
+      "image": "tech_solutions_logo.webp",
+      "membershipLevel": "gold",
+      "otherInfo": "Cutting-edge IT services and support."
+    },
+    {
+      "name": "Green Valley Farms",
+      "address": "Rural Route 2, Anytown, USA",
+      "phone": "555-444-5555",
+      "website": "https://www.greenvalleyfarms.org",
+      "image": "green_valley_logo.webp",
+      "membershipLevel": "member",
+      "otherInfo": "Sustainable organic produce and local honey."
+    },
+    {
+      "name": "Elite Fitness Gym",
+      "address": "202 Health Blvd, Anytown, USA",
+      "phone": "555-666-7777",
+      "website": "https://www.elitefitness.club",
+      "image": "elite_fitness_logo.webp",
+      "membershipLevel": "silver",
+      "otherInfo": "State-of-the-art gym with personal trainers."
+    },
+    {
+      "name": "Artisan Craft Store",
+      "address": "303 Creative Way, Anytown, USA",
+      "phone": "555-888-9999",
+      "website": "https://www.artisancraft.shop",
+      "image": "artisan_craft_logo.webp",
+      "membershipLevel": "member",
+      "otherInfo": "Handmade gifts and local artistry."
+    }
+  ]
