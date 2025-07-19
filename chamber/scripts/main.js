@@ -1,183 +1,136 @@
-// Function to get the last modified date of the document
-function getLastModified() {
-    const lastModifiedElement = document.getElementById('lastmodified');
-    if (lastModifiedElement) {
-        const lastModDate = new Date(document.lastModified);
-        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
-        lastModifiedElement.textContent = lastModDate.toLocaleDateString('en-US', options);
-    }
-}
-
-// Function to set the current year in the footer
-function setCurrentYear() {
-    const currentYearElement = document.getElementById('currentyear');
-    if (currentYearElement) {
-        currentYearElement.textContent = new Date().getFullYear();
-    }
-}
-
-// Function to create and display a single member card/list item
-const displayMember = (member) => {
-    const section = document.createElement('section');
-    section.classList.add('member-card');
-
-    // Image
-    const image = document.createElement('img');
-    image.src = `images/${member.image}`; // Assumes images are in 'chamber/images/'
-    image.alt = `${member.name} logo`;
-    image.loading = 'lazy';
-    image.width = 100;
-    image.height = 100;
-
-    // Name
-    const h3 = document.createElement('h3');
-    h3.textContent = member.name;
-
-    // Address
-    const address = document.createElement('p');
-    address.textContent = member.address;
-    address.classList.add('member-address');
-
-    // Phone
-    const phone = document.createElement('p');
-    phone.textContent = `Phone: ${member.phone}`;
-    phone.classList.add('member-phone');
-
-    // Website (link)
-    const website = document.createElement('a');
-    website.href = member.website;
-    website.textContent = "Visit Website";
-    website.setAttribute('target', '_blank');
-    website.setAttribute('rel', 'noopener noreferrer');
-
-    // Membership Level
-    const membership = document.createElement('p');
-    membership.textContent = `Membership: ${member.membershipLevel.charAt(0).toUpperCase() + member.membershipLevel.slice(1)}`;
-    membership.classList.add('member-membership');
-
-    // Append elements to the section
-    section.appendChild(image);
-    section.appendChild(h3);
-    section.appendChild(address);
-    section.appendChild(phone);
-    section.appendChild(website);
-    section.appendChild(membership);
-
-    // Add otherInfo if present in JSON
-    if (member.otherInfo) {
-        const otherInfo = document.createElement('p');
-        otherInfo.textContent = member.otherInfo;
-        otherInfo.classList.add('member-other-info');
-        section.appendChild(otherInfo);
-    }
-
-    return section;
-};
-
-// Function to fetch members data and display them
-async function getMembers() {
-    const url = '../data/members.json'; // Path to your JSON file within 'chamber/data/'
-    const cardsContainer = document.querySelector('.member-display');
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const members = await response.json();
-        console.log("Fetched Members:", members); // Log data for debugging
-
-        cardsContainer.innerHTML = ''; // Clear existing content
-
-        members.forEach(member => {
-            const memberElement = displayMember(member);
-            cardsContainer.appendChild(memberElement);
-        });
-
-        // Set initial view to grid and activate the corresponding button
-        cardsContainer.classList.add('grid-view');
-        document.getElementById('grid-view-btn').classList.add('active');
-
-    } catch (error) {
-        console.error('Could not fetch members:', error);
-        cardsContainer.innerHTML = '<p>Error loading member data. Please try again later.</p>';
-    }
-}
-
-// --- Event Listeners for Grid/List Toggle and Header Functionality ---
 document.addEventListener('DOMContentLoaded', () => {
-    setCurrentYear();
-    getLastModified();
+    // Current year for footer
+    document.getElementById('currentyear').textContent = new Date().getFullYear();
 
-    // Only try to fetch members if we are on the directory page
-    // This prevents errors if directory-specific elements are not on other pages
-    if (document.querySelector('.member-display')) {
-        getMembers();
+    // Last modified date for footer
+    document.getElementById('lastmodified').textContent = document.lastModified;
 
-        const gridButton = document.getElementById('grid-view-btn');
-        const listButton = document.getElementById('list-view-btn');
-        const memberDisplayContainer = document.querySelector('.member-display');
-
-        gridButton.addEventListener('click', () => {
-            memberDisplayContainer.classList.remove('list-view');
-            memberDisplayContainer.classList.add('grid-view');
-            gridButton.classList.add('active');
-            listButton.classList.remove('active');
-        });
-
-        listButton.addEventListener('click', () => {
-            memberDisplayContainer.classList.remove('grid-view');
-            memberDisplayContainer.classList.add('list-view');
-            listButton.classList.add('active');
-            gridButton.classList.remove('active');
-        });
-    }
-
-
-    // --- Header / Navigation Functionality (from your existing structure) ---
-
-    // Mobile Menu Toggle
+    // Hamburger menu toggle
     const menuToggle = document.querySelector('.menu-toggle');
     const navLinks = document.querySelector('.nav-links');
 
     if (menuToggle && navLinks) {
         menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show'); // Toggles the 'show' class to reveal/hide menu
-            // Update ARIA attribute for accessibility
-            const isExpanded = navLinks.classList.contains('show');
-            menuToggle.setAttribute('aria-expanded', isExpanded);
-        });
-
-        // Close menu if a link is clicked (useful for single-page nav or just tidiness)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('show');
-                menuToggle.setAttribute('aria-expanded', 'false');
-            });
+            navLinks.classList.toggle('show');
+            menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('show'));
         });
     }
 
-    // Dark Mode Toggle
+    // Dark mode toggle
     const darkModeToggle = document.querySelector('.dark-mode-toggle');
     if (darkModeToggle) {
         darkModeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
-            const isDarkMode = document.body.classList.contains('dark-mode');
-            localStorage.setItem('darkMode', isDarkMode); // Save user preference
-            darkModeToggle.textContent = isDarkMode ? '☀️' : '🌙'; // Change icon
-            darkModeToggle.setAttribute('aria-label', isDarkMode ? 'Toggle light mode' : 'Toggle dark mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
         });
 
-        // Apply dark mode preference on page load
-        const savedDarkMode = localStorage.getItem('darkMode');
-        if (savedDarkMode === 'true') {
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'enabled') {
             document.body.classList.add('dark-mode');
-            darkModeToggle.textContent = '☀️';
-            darkModeToggle.setAttribute('aria-label', 'Toggle light mode');
-        } else {
-            // Ensure correct icon if dark mode is not active on load
-            darkModeToggle.textContent = '🌙';
-            darkModeToggle.setAttribute('aria-label', 'Toggle dark mode');
         }
+    }
+
+    // Directory Page Specific Functionality
+    const memberDisplay = document.querySelector('.member-display');
+    const gridViewBtn = document.getElementById('grid-view-btn');
+    const listViewBtn = document.getElementById('list-view-btn');
+
+    let membersData = []; // To store fetched member data
+
+    async function getMembers() {
+        // --- THIS LINE HAS BEEN UPDATED ---
+        const url = '../data/members.json'; // Go up one level (from 'scripts/') to 'chamber/', then into 'data/' to find 'members.json'
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            membersData = await response.json();
+            displayMembers(membersData); // Display in default (grid) view
+        } catch (error) {
+            console.error('Error loading member data:', error);
+            if (memberDisplay) {
+                memberDisplay.innerHTML = '<p>Error loading member data. Please try again later.</p>';
+            }
+        }
+    }
+
+    function displayMembers(members, view = 'grid') {
+        if (!memberDisplay) return;
+
+        memberDisplay.innerHTML = ''; // Clear existing content
+        memberDisplay.classList.remove('grid-view', 'list-view');
+        memberDisplay.classList.add(`${view}-view`);
+
+        members.forEach(member => {
+            const card = document.createElement('div');
+            card.classList.add('member-card');
+
+            // Create elements for member data
+            const img = document.createElement('img');
+            img.src = `images/${member.image}`; // Path to images folder relative to directory.html
+            img.alt = `${member.name} logo`;
+            img.loading = 'lazy'; // Lazy load images
+
+            const name = document.createElement('h3');
+            name.textContent = member.name;
+
+            const address = document.createElement('p');
+            address.classList.add('member-address');
+            address.textContent = member.address;
+
+            const phone = document.createElement('p');
+            phone.classList.add('member-phone');
+            phone.textContent = member.phone;
+
+            const website = document.createElement('a');
+            website.classList.add('member-website');
+            website.href = member.website;
+            website.textContent = 'Website';
+            website.target = '_blank'; // Open in new tab
+
+            const membershipLevel = document.createElement('p');
+            membershipLevel.classList.add('member-membership');
+            membershipLevel.textContent = `Membership: ${member.membershipLevel}`;
+
+            const otherInfo = document.createElement('p');
+            otherInfo.classList.add('member-other-info');
+            otherInfo.textContent = member.otherInfo;
+
+            // Append elements to the card
+            card.appendChild(img);
+            card.appendChild(name);
+            card.appendChild(address);
+            card.appendChild(phone);
+            card.appendChild(website);
+            card.appendChild(membershipLevel);
+            card.appendChild(otherInfo);
+
+            memberDisplay.appendChild(card);
+        });
+    }
+
+    // View Toggle Buttons
+    if (gridViewBtn && listViewBtn && memberDisplay) {
+        gridViewBtn.addEventListener('click', () => {
+            displayMembers(membersData, 'grid');
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+        });
+
+        listViewBtn.addEventListener('click', () => {
+            displayMembers(membersData, 'list');
+            listViewBtn.classList.add('active');
+            gridViewBtn.classList.remove('active');
+        });
+
+        // Set initial active state
+        gridViewBtn.classList.add('active'); // Grid view is default
+    }
+
+    // Call the function to load members when the page loads
+    if (memberDisplay) { // Only call if on the directory page
+        getMembers();
     }
 });
