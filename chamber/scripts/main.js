@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let membersData = []; // To store fetched member data
 
     async function getMembers() {
-        // --- THIS LINE HAS BEEN UPDATED ---
-        const url = '../data/members.json'; // Go up one level (from 'scripts/') to 'chamber/', then into 'data/' to find 'members.json'
+        // Corrected path: Go up one level (from 'scripts/') to 'chamber/', then into 'data/' to find 'members.json'
+        const url = '../data/members.json';
 
         try {
             const response = await fetch(url);
@@ -69,7 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Create elements for member data
             const img = document.createElement('img');
-            img.src = `images/${member.image}`; // Path to images folder relative to directory.html
+            // Path to images folder relative to directory.html (which is in 'chamber/')
+            img.src = `images/${member.image}`;
             img.alt = `${member.name} logo`;
             img.loading = 'lazy'; // Lazy load images
 
