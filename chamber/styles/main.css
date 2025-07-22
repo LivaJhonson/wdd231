@@ -197,7 +197,7 @@ main {
     padding: 0 1rem; /* Use 1rem padding consistent with .container */
 }
 
-main h2 {
+main h1 {
     text-align: center;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
@@ -268,7 +268,7 @@ main h2 {
 /* --- Grid View Styles --- */
 .member-display.grid-view {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Allow wrapping for various sizes */
     gap: 20px;
     justify-content: center;
 }
@@ -297,6 +297,7 @@ main h2 {
 
 .member-display.list-view .member-card {
     text-align: left;
+    display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -322,13 +323,39 @@ main h2 {
     height: 60px;
     margin-right: 20px;
     flex-shrink: 0;
+    border-radius: 50%;
     border: none;
     padding: 0;
 }
 
-/* Hide some elements in list view to simplify, as per example screenshots */
-.member-display.list-view .member-card .member-address,
-.member-display.list-view .member-card .member-phone,
+.member-display.list-view .member-card h3 {
+    flex-basis: 25%;
+    margin: 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.member-display.list-view .member-card .member-address {
+    display: block;
+    flex-basis: 30%;
+    font-size: 0.9em;
+    margin: 0 10px;
+}
+
+.member-display.list-view .member-card .member-phone {
+    display: block;
+    flex-basis: 15%;
+    font-size: 0.9em;
+    margin: 0 10px;
+}
+
+.member-display.list-view .member-card .member-website {
+    flex-basis: 20%;
+    text-align: right;
+    margin: 0;
+}
+
 .member-display.list-view .member-card .member-membership,
 .member-display.list-view .member-card .member-other-info {
     display: none;
@@ -527,7 +554,7 @@ main h2 {
         grid-template-columns: 1fr; /* Single column on mobile for grid view */
     }
     .member-display.list-view .member-card {
-        flex-direction: column; /* Stack elements in list view on mobile */
+        flex-direction: column; /* Stack elements for list view on small mobile screens */
         align-items: flex-start;
         padding: 15px;
     }
@@ -537,12 +564,20 @@ main h2 {
     }
     .member-display.list-view .member-card h3 {
         margin-bottom: 10px;
+        flex-basis: auto; /* Reset flex basis for mobile */
     }
-    .member-display.list-view .member-card a {
+    .member-display.list-view .member-card .member-address,
+    .member-display.list-view .member-card .member-phone {
+        display: block; /* Ensure they are visible for the list view on mobile too */
+        flex-basis: auto; /* Reset flex basis for mobile */
+        margin: 0 0 5px 0; /* Adjust margins */
+    }
+    .member-display.list-view .member-card .member-website {
         margin-left: 0;
         margin-top: 10px;
+        text-align: left; /* Align left for mobile list view */
+        flex-basis: auto; /* Reset flex basis for mobile */
     }
-
 
     .footer-content {
         flex-direction: column;
@@ -622,7 +657,13 @@ main h2 {
 
     /* Directory specific tablet adjustments */
     .member-display.grid-view {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Keep grid columns */
+        grid-template-columns: repeat(2, minmax(280px, 1fr)); /* 2 columns for tablet grid view */
+    }
+    
+    /* Ensure list view stays horizontal for tablet */
+    .member-display.list-view .member-card {
+        flex-direction: row; /* Horizontal layout for list view on tablet */
+        align-items: center;
     }
 }
 
@@ -693,7 +734,14 @@ main h2 {
 
     /* Directory specific desktop adjustments (usually same as tablet or slightly wider columns) */
     .member-display.grid-view {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Slightly wider cards */
+        grid-template-columns: repeat(3, minmax(300px, 1fr)); /* 3 columns for desktop grid view */
+        gap: 20px;
+    }
+    
+    /* Ensure list view stays horizontal for desktop */
+    .member-display.list-view .member-card {
+        flex-direction: row; /* Horizontal layout for list view on desktop */
+        align-items: center;
     }
 }
 
@@ -739,7 +787,7 @@ body.dark-mode .dark-mode-toggle:hover {
 }
 
 /* Dark mode adjustments for main content and directory specific elements */
-body.dark-mode main h2 {
+body.dark-mode main h1 {
     color: var(--primary-color);
 }
 

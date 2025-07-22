@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function getMembers() {
         // Corrected path: Go up one level (from 'scripts/') to 'chamber/', then into 'data/' to find 'members.json'
-        const url = '../data/members.json';
+        const url = 'data/members.json'; // This path is relative to the HTML file (directory.html)
 
         try {
             const response = await fetch(url);
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const website = document.createElement('a');
             website.classList.add('member-website');
             website.href = member.website;
-            website.textContent = 'Website';
+            website.textContent = member.website; // Changed to display the actual URL
             website.target = '_blank'; // Open in new tab
 
             const membershipLevel = document.createElement('p');
