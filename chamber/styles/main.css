@@ -75,7 +75,7 @@ img {
 
 .btn-secondary {
     display: inline-block;
-    background-color: var(--secondary-color);
+    background-color: #374047;
     color: var(--light-text-color);
     padding: 0.6rem 1.2rem;
     border-radius: 5px;
@@ -83,7 +83,7 @@ img {
 }
 
 .btn-secondary:hover {
-    background-color: #218838;
+    background-color: #0f1011;
     text-decoration: none;
 }
 
