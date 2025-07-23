@@ -1,14 +1,6 @@
 /* Styles for the Home Page (index.html) */
 
 /* Hero Section */
-.main-page-title {
-    text-align: center;
-    padding: 20px 0; 
-    margin: 0;
-    font-size: 2.2em; 
-    color: var(--primary-color);
-}
-
 .hero-section {
     position: relative;
     width: 100%;
