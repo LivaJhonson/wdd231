@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timbuktu Chamber of Commerce - Home</title> <meta name="description" content="Welcome to the Timbuktu Chamber of Commerce. Discover local businesses, events, and community initiatives in Timbuktu, Mali."> <meta name="author" content="Nirintsoa Liva Jhonson Rabariharinjaka">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Timbuktu Chamber of Commerce Home"> <meta property="og:type" content="website">
+    <meta property="og:image" content="https://livajhonson.github.io/wdd231/chamber/images/og-hero-image.jpg"> <meta property="og:url" content="https://livajhonson.github.io/wdd231/chamber/index.html"> <meta property="og:description" content="Connect with businesses and community in Timbuktu, Mali, through the Chamber of Commerce."> <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/home.css">
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/chamber-logo.png" alt="Timbuktu Chamber of Commerce Logo" class="chamber-logo">
+                <h1 class="site-title">Timbuktu <br><span>Chamber of Commerce</span></h1> </div>
+            <nav class="main-nav">
+                <div class="theme-toggle">
+                    <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li> <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li> <li><a href="join.html">Join</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="homepage-main">
+        <section class="hero-section">
+            <img src="images/hero-image.webp" alt="Scenic view of Timbuktu" class="hero-image">
+            <div class="hero-overlay">
+                <h2>Welcome to the Timbuktu Chamber of Commerce!</h2>
+                <a href="join.html" class="btn-primary">Join the Chamber!</a> </div>
+        </section>
+
+        <section class="home-grid">
+            <div class="grid-item events-section">
+                <h2>Upcoming Events</h2> <ul id="upcoming-events-list"> <li>Networking Mixer - July 15th</li>
+                    <li>Small Business Workshop - July 20th</li>
+                    <li>Community Fair - August 5th</li>
+                </ul>
+                <a href="events.html" class="btn-secondary">View All Events</a>
+            </div>
+
+            <div class="grid-item weather-section">
+                <h2>Current Weather in Timbuktu</h2> <div class="current-weather-display">
+                    <img id="weather-icon" src="images/weather-placeholder.svg" alt="Weather Icon">
+                    <p><span id="current-temp">--°F</span></p> <p id="weather-condition">Loading...</p> </div>
+            </div>
+
+            <div class="grid-item forecast-section">
+                <h2>3-Day Forecast</h2> <div id="forecast-display">
+                    <p>Loading forecast...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="business-spotlights">
+            <h2>Business Spotlights</h2>
+            <div class="spotlight-grid" id="spotlight-container">
+                <p>Loading spotlights...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="chamber-contact-info">
+                <h3>Timbuktu Chamber of Commerce</h3>
+                <p>10 Rue De La Paix</p>
+                <p>Timbuktu, Mali 999</p>
+                <p>Email: <a href="info@timbuktucc.org">info@timbuktuchamber.org</a></p>
+                <p>Phone: (223) 555-2300</p>
+            </div>
+            <div class="social-media">
+                <a href="https://www.youtube.com/" aria-label="YouTube"><img src="images/youtube.svg" alt="YouTube"></a>
+                <a href="https://x.com/" aria-label="Twitter"><img src="images/twitter.svg" alt="Twitter"></a>
+                <a href="https://www.linkedin.com/feed/" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            </div>
+            <div class="project-info">
+                <p>WDD231 Class Project</p>
+                <p>Nirintsoa Liva Jhonson Rabariharinjaka</p>
+                <p>© <span id="currentyear"></span> Timbuktu Chamber of Commerce</p>
+                <p>Last Modification: <span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/home.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+/* Styles for the Home Page (index.html) */
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 350px; /* Adjust height as needed */
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.7); /* Darken image slightly for text readability */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+    color: var(--light-text-color);
+    padding: 1rem;
+}
+
+.hero-overlay h2 {
+    color: var(--light-text-color); /* Ensure heading is white in overlay */
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Home Grid Layout */
+.home-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.home-grid .grid-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes content and button apart */
+}
+
+.home-grid .grid-item h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.home-grid .grid-item ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.home-grid .grid-item li {
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.home-grid .grid-item li:last-child {
+    border-bottom: none;
+}
+
+.home-grid .grid-item .btn-secondary {
+    align-self: flex-start; /* Aligns button to the left */
+    margin-top: auto; /* Pushes button to the bottom */
+}
+
+/* Weather Section Specific Styles */
+.current-weather-display {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1; /* Allows weather content to fill space */
+}
+
+.current-weather-display img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+}
+
+.current-weather-display p {
+    margin: 0.3rem 0;
+    font-size: 1.1rem;
+}
+
+.current-weather-display #current-temp {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.forecast-section #forecast-display {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.forecast-day {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.forecast-day:last-child {
+    border-bottom: none;
+}
+
+/* Business Spotlights */
+.business-spotlights {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.business-spotlights h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.spotlight-grid {
+    display: flex; /* Use flexbox for horizontal arrangement */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 1.5rem;
+    justify-content: center; /* Center items when they don't fill a row */
+}
+
+.spotlight-grid .business-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+    text-align: center;
+    flex: 1 1 calc(33% - 1.5rem); /* Default for 3 columns on desktop, adapts */
+    min-width: 280px; /* Minimum width before wrapping */
+    max-width: 380px; /* Max width to prevent overly wide cards in 2-column layouts */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.spotlight-grid .business-card img {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    padding: 5px;
+}
+
+.spotlight-grid .business-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.spotlight-grid .business-card p {
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+}
+
+.spotlight-grid .business-card .tagline {
+    font-style: italic;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+.spotlight-grid .business-card a {
+    margin-top: 0.5rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Responsive adjustments for Home Page */
+
+/* Mobile (Default, up to 768px handled by main.css general rules and home.css defaults) */
+@media (max-width: 768px) {
+    .hero-overlay h2 {
+        font-size: 1.8rem;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
+
+    .spotlight-grid .business-card {
+        flex: 1 1 100%; /* Full width on small mobile screens */
+        max-width: none; /* Remove max-width constraint */
+    }
+}
+
+/* Tablet (between 769px and 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .hero-overlay h2 {
+        font-size: 2.2rem;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* 3 columns for tablet home grid */
+    }
+
+    /* Weather sections might need less padding or smaller text on smaller tablets if content overflows */
+    .current-weather-display p {
+        font-size: 1rem;
+    }
+    .current-weather-display #current-temp {
+        font-size: 2rem;
+    }
+
+    .spotlight-grid .business-card {
+        flex: 1 1 calc(50% - 1.5rem); /* 2 columns for tablet spotlights */
+        max-width: none;
+    }
+}
+
+/* Desktop (larger than 1025px) */
+@media (min-width: 1025px) {
+    .hero-overlay h2 {
+        font-size: 3rem;
+    }
+
+    .home-grid {
+        /* Events 50%, Current Weather 25%, Forecast 25% */
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .spotlight-grid .business-card {
+        flex: 1 1 calc(33.33% - 1.5rem); /* 3 columns for desktop spotlights */
+    }
+}
+
+/* Dark mode adjustments for home page */
+body.dark-mode .hero-overlay h2 {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .home-grid .grid-item,
+body.dark-mode .spotlight-grid .business-card {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Slightly darker shadow for contrast */
+}
+
+body.dark-mode .home-grid .grid-item h2,
+body.dark-mode .spotlight-grid .business-card h3 {
+    color: var(--primary-color);
+}
+
+body.dark-mode .home-grid .grid-item li,
+body.dark-mode .business-card p {
+    color: var(--text-color);
+}
+
+body.dark-mode .home-grid .grid-item li {
+    border-bottom-color: var(--border-color);
+}
+
+body.dark-mode .spotlight-grid .business-card img {
+    border-color: var(--primary-color);
+}
