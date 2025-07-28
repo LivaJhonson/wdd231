@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timbuktu Chamber of Commerce - Thank You!</title>
+    <meta name="description" content="Thank you for joining the Timbuktu Chamber of Commerce!">
+    <meta name="author" content="Nirintsoa Liva Jhonson Rabariharinjaka">
+    
+    <link rel="icon" href="images/favicon.ico">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/thankyou.css"> 
+
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/chamber-logo.png" alt="Timbuktu Chamber of Commerce Logo" class="chamber-logo">
+                <h1 class="site-title">Timbuktu <br><span>Chamber of Commerce By Chrisostome</span></h1>
+            </div>
+            <nav class="main-nav">
+                <div class="theme-toggle">
+                    <button class="dark-mode-toggle" aria-label="Toggle dark mode">🌙</button>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="thankyou-main">
+        <h1 class="main-page-title">Thank You for Your Application!</h1>
+        <section class="confirmation-message">
+            <p>Your membership application has been received. We appreciate your interest in joining the Timbuktu Chamber of Commerce.</p>
+            <p>We will review your information and get back to you shortly.</p>
+            <h3>Here's a summary of the information you provided:</h3>
+            <div id="form-data-display" class="form-summary-card">
+                <p><strong>First Name:</strong> <span id="display-fname"></span></p>
+                <p><strong>Last Name:</strong> <span id="display-lname"></span></p>
+                <p><strong>Email:</strong> <span id="display-email"></span></p>
+                <p><strong>Mobile Phone:</strong> <span id="display-phone"></span></p>
+                <p><strong>Business Name:</strong> <span id="display-orgname"></span></p>
+                <p><strong>Submission Timestamp:</strong> <span id="display-timestamp"></span></p>
+            </div>
+            <p>Return to the <a href="index.html">Home Page</a>.</p>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="chamber-contact-info">
+                <h3>Timbuktu Chamber of Commerce</h3>
+                <p>10 Rue De La Paix</p>
+                <p>Timbuktu, Mali 999</p>
+                <p>Email: <a href="mailto:info@timbuktuchamber.org">info@timbuktuchamber.org</a></p>
+                <p>Phone: (223) 555-2300</p>
+            </div>
+            <div class="social-media">
+                <a href="#" aria-label="YouTube"><img src="images/youtube.svg" alt="YouTube"></a>
+                <a href="#" aria-label="Twitter"><img src="images/twitter.svg" alt="Twitter"></a>
+                <a href="#" aria-label="LinkedIn"><img src="images/linkedin.svg" alt="LinkedIn"></a>
+            </div>
+            <div class="project-info">
+                <p>WDD231 Class Project</p>
+                <p>Nirintsoa Liva Jhonson Rabariharinjaka</p>
+                <p>&copy; <span id="currentyear"></span> Timbuktu Chamber of Commerce</p>
+                <p>Last Modification: <span id="lastmodified"></span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/thankyou.js" defer></script> 
+</body>
+</html>

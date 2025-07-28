@@ -1,0 +1,255 @@
+/* styles/join.css */
+
+.join-main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column; /* Default to column for small screens */
+    gap: 20px;
+}
+
+/* Adjust for larger screens: form and cards side-by-side */
+@media (min-width: 768px) {
+    .join-content {
+        display: flex;
+        gap: 40px;
+        flex-direction: row; /* For desktop, put form and cards in a row */
+        align-items: flex-start; /* Align content at the top */
+    }
+
+    .membership-form {
+        flex: 2; /* Form takes more space */
+    }
+
+    .membership-levels-container {
+        flex: 1; /* Cards take less space */
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        gap: 15px;
+    }
+}
+
+/* Form Styles */
+.membership-form fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--card-bg);
+}
+
+.membership-form legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: var(--primary-color);
+    padding: 0 10px;
+    margin-left: -10px;
+}
+
+.membership-form label {
+    display: block;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.membership-form label input[type="text"],
+.membership-form label input[type="email"],
+.membership-form label input[type="tel"],
+.membership-form label textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+.membership-form label input:focus,
+.membership-form label textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+}
+
+.membership-form .membership-radio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: normal; /* Override bold from parent label */
+}
+
+.membership-form .membership-radio input[type="radio"] {
+    margin-right: 10px;
+    accent-color: var(--primary-color); /* Style the radio button itself */
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 12px 20px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #004085; /* Darker shade on hover */
+}
+
+/* Membership Cards */
+.membership-levels-container {
+    display: flex;
+    flex-direction: column; /* Stack cards by default for mobile */
+    gap: 15px;
+}
+
+.membership-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0; /* For animation */
+    transform: translateY(20px); /* For animation */
+}
+
+.membership-card.show-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation Delays for cards */
+.membership-levels-container .membership-card:nth-child(1) { transition-delay: 0.1s; }
+.membership-levels-container .membership-card:nth-child(2) { transition-delay: 0.2s; }
+.membership-levels-container .membership-card:nth-child(3) { transition-delay: 0.3s; }
+.membership-levels-container .membership-card:nth-child(4) { transition-delay: 0.4s; }
+
+
+.membership-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.membership-card p {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+.membership-card .info-btn {
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: var(--light-text-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.membership-card .info-btn:hover {
+    background-color: #004085;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    padding: 20px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; /* Smaller on mobile */
+    max-width: 500px; /* Max width on desktop */
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.modal-content ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: var(--text-color);
+}
+
+.modal-content ul li {
+    margin-bottom: 8px;
+}
+
+/* Dark Mode Adjustments for Join Page (add to main.css's dark mode section) */
+/* Or if you prefer, duplicate and scope within join.css if this CSS loads after main.css */
+body.dark-mode .membership-form fieldset,
+body.dark-mode .membership-card,
+body.dark-mode .modal-content {
+    background-color: var(--dark-section-bg);
+    border-color: #555;
+}
+
+body.dark-mode .membership-form legend,
+body.dark-mode .membership-form label,
+body.dark-mode .membership-card h3,
+body.dark-mode .membership-card p,
+body.dark-mode .modal-content h2,
+body.dark-mode .modal-content ul li {
+    color: var(--light-text-color);
+}
+
+body.dark-mode .membership-form label input[type="text"],
+body.dark-mode .membership-form label input[type="email"],
+body.dark-mode .membership-form label input[type="tel"],
+body.dark-mode .membership-form label textarea {
+    background-color: #666;
+    border-color: #888;
+    color: var(--light-text-color);
+}
+
+body.dark-mode .membership-form label input:focus,
+body.dark-mode .membership-form label textarea:focus {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+body.dark-mode .close-button {
+    color: var(--light-text-color);
+}
