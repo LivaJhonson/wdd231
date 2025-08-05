@@ -1,0 +1,58 @@
+[
+    {
+      "name": "Djinguereber Mosque",
+      "address": "Timbuktu, Mali",
+      "image": "images/discover/djinguereber-mosque.jpg",
+      "description": "A world-renowned center of learning and a UNESCO World Heritage site, built in the 14th century with traditional mudbrick architecture.",
+      "buttonUrl": "#"
+    },
+    {
+      "name": "Sankore Madrasah",
+      "address": "Timbuktu, Mali",
+      "image": "images/discover/sankore-madrasah.jpg",
+      "description": "Historically, one of the three ancient universities located in Timbuktu, the Sankore Mosque was a vital center of Islamic scholarship and learning.",
+      "buttonUrl": "#"
+    },
+    {
+      "name": "House of Explorer René Caillié",
+      "address": "Timbuktu, Mali",
+      "image": "images/discover/caillie-house.jpg",
+      "description": "This is the house where the French explorer René Caillié, one of the first Europeans to return from Timbuktu, stayed in 1828.",
+      "buttonUrl": "#"
+    },
+    {
+      "name": "Manuscript Libraries",
+      "address": "Timbuktu, Mali",
+      "image": "images/discover/manuscript-library.jpg",
+      "description": "Timbuktu is home to a vast collection of ancient manuscripts, many dating back to the 13th century, covering a wide range of topics from astronomy to law.",
+      "buttonUrl": "#"
+    },
+    {
+      "name": "Camel Market",
+      "address": "Timbuktu, Mali",
+      "image": "images/discover/camel-market.jpg",
+      "description": "A bustling hub of commerce where locals and traders from across the Sahara gather to trade goods, including the iconic Timbuktu camels.",
+      "buttonUrl": "#"
+    },
+    {
+      "name": "Sahara Desert",
+      "address": "Near Timbuktu, Mali",
+      "image": "images/discover/sahara-desert.jpg",
+      "description": "The city sits on the edge of the vast Sahara Desert, offering stunning landscapes, star gazing, and the gateway to ancient trade routes.",
+      "buttonUrl": "#"
+    },
+    {
+      "name": "Market Square",
+      "address": "Timbuktu, Mali",
+      "image": "images/discover/market-square.jpg",
+      "description": "The central square of the city, where daily life unfolds. It is a great place to observe local culture and find unique crafts and goods.",
+      "buttonUrl": "#"
+    },
+    {
+      "name": "Timbuktu Museum",
+      "address": "Timbuktu, Mali",
+      "image": "images/discover/timbuktu-museum.jpg",
+      "description": "A museum dedicated to the history and culture of Timbuktu, housing artifacts and exhibits that tell the story of the city's golden age.",
+      "buttonUrl": "#"
+    }
+  ]
