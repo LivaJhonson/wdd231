@@ -1,0 +1,233 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+    --primary-color: #8CAA64; /* Softer earthy green */
+    --secondary-color: #F3E9DD;
+    --text-color: #333333;
+}
+
+/* =========================
+   GENERAL STYLES
+========================= */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* NAVIGATION - Mobile dropdown */
+.nav {
+    display: none;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 60px; /* below the header */
+    left: 0;
+    width: 100%;
+    padding: 0.5rem 0;
+    z-index: 10;
+}
+
+.nav a {
+    padding: 0.75rem;
+    color: white;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.nav a:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+/* Menu toggle */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+.search-section {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.search-section input {
+    padding: 0.5rem;
+    width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-section button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.3); /* lighter overlay */
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-width: 90%;
+}
+
+.hero-text h1 {
+    margin-bottom: 0.5rem;
+}
+
+.hero-text p {
+    margin-bottom: 0.75rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+/* =========================
+   FEATURED RECIPE
+========================= */
+.featured-recipe {
+    padding: 1rem;
+}
+
+.recipe-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1rem 0;
+    transition: transform 0.2s ease-in-out;
+}
+
+.recipe-card:hover {
+    transform: scale(1.02);
+}
+
+.recipe-card img {
+    width: 100%;
+    display: block;
+}
+
+.card-text {
+    padding: 1rem;
+}
+
+/* =========================
+   RECIPE GRID
+========================= */
+.recipe-grid {
+    padding: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.recipe-card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.footer a {
+    color: white;
+    margin: 0 0.3rem;
+}
+
+/* =========================
+   DESKTOP VIEW
+========================= */
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: none;
+        width: auto;
+        padding: 0;
+    }
+    .nav a {
+        border: none;
+    }
+    .menu-toggle {
+        display: none;
+    }
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

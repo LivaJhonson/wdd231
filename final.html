@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Pantry Chef - Simple Recipes from Everyday Ingredients</title>
+    <meta name="description" content="Discover simple, delicious recipes you can make from ingredients already in your kitchen. The Pantry Chef helps home cooks create amazing meals without extra shopping.">
+    <meta name="author" content="Nirintsoa Liva Jhonson Rabariharinjaka">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="The Pantry Chef - Simple Recipes from Everyday Ingredients">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yourwebsite.com/images/og-hero-image.jpg">
+    <meta property="og:url" content="https://yourwebsite.com/final.html">
+    <meta property="og:description" content="Get inspired with quick, easy, and tasty recipes using ingredients from your pantry.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/final.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">The Pantry Chef</div>
+        <nav class="nav" id="navMenu">
+            <a href="#">Home</a>
+            <a href="#">Recipes</a>
+            <a href="#">Categories</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <button class="menu-toggle" id="menuToggle">☰</button>
+    </header>
+
+    <!-- SEARCH BAR -->
+    <section class="search-section">
+        <input type="text" id="searchInput" placeholder="Search recipes by name or ingredient..." />
+        <button id="searchBtn">Search</button>
+    </section>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <img src="https://source.unsplash.com/1200x500/?fresh-food,ingredients" alt="Featured Recipe">
+        <div class="hero-text">
+            <h1>Fresh Meals from Your Pantry</h1>
+            <p>Delicious recipes made from the ingredients you already have at home.</p>
+            <a href="#" class="btn">Browse Recipes</a>
+        </div>
+    </section>
+
+    <!-- FEATURED RECIPE -->
+    <section class="featured-recipe">
+        <h2>Featured Recipe</h2>
+        <div class="recipe-card">
+            <img src="https://source.unsplash.com/600x400/?chicken,stir-fry" alt="Chicken and Veggie Stir Fry">
+            <div class="card-text">
+                <h3>Chicken & Veggie Stir Fry</h3>
+                <p>Quick, colorful, and packed with flavor — ready in 20 minutes! Perfect for busy weeknights.</p>
+                <a href="#" class="btn">View Recipe</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RECIPE GRID -->
+    <section class="recipe-grid">
+        <h2>Recent Recipes</h2>
+        <div class="grid" id="recipeGrid">
+            <div class="recipe-card" data-ingredients="pasta garlic butter">
+                <img src="https://source.unsplash.com/400x300/?pasta" alt="Pasta">
+                <h3>Garlic Butter Pasta</h3>
+                <p>Simple and comforting — a creamy garlic butter sauce tossed with pasta.</p>
+            </div>
+            <div class="recipe-card" data-ingredients="vegetables broth carrots">
+                <img src="https://source.unsplash.com/400x300/?soup" alt="Soup">
+                <h3>Hearty Vegetable Soup</h3>
+                <p>A warm, nourishing bowl filled with seasonal veggies and herbs.</p>
+            </div>
+            <div class="recipe-card" data-ingredients="lettuce tomatoes cucumber">
+                <img src="https://source.unsplash.com/400x300/?salad" alt="Salad">
+                <h3>Fresh Garden Salad</h3>
+                <p>Crunchy, colorful, and packed with vitamins — a salad for any meal.</p>
+            </div>
+            <div class="recipe-card" data-ingredients="eggs cheese herbs">
+                <img src="https://source.unsplash.com/400x300/?omelette" alt="Omelette">
+                <h3>Cheese & Herb Omelette</h3>
+                <p>Fluffy eggs folded around melted cheese and fresh herbs.</p>
+            </div>
+            <div class="recipe-card" data-ingredients="rice chicken soy-sauce">
+                <img src="https://source.unsplash.com/400x300/?fried-rice" alt="Fried Rice">
+                <h3>Quick Chicken Fried Rice</h3>
+                <p>Leftover rice turns into magic with chicken, veggies, and soy sauce.</p>
+            </div>
+            <div class="recipe-card" data-ingredients="bread eggs milk cinnamon">
+                <img src="https://source.unsplash.com/400x300/?french-toast" alt="French Toast">
+                <h3>Classic French Toast</h3>
+                <p>Golden, soft, and dusted with cinnamon sugar — breakfast bliss.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 The Pantry Chef. All Rights Reserved.</p>
+        <p>
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Service</a> | 
+            <a href="#">Contact</a>
+        </p>
+    </footer>
+
+    <script src="scripts/final.js"></script>
+</body>
+</html>
