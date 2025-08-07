@@ -37,6 +37,10 @@ img {
     display: block;
 }
 
+.main-header {
+    text-align: center;
+}
+
 /* =========================
     HEADER
 ========================= */
