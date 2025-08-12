@@ -215,6 +215,11 @@ main {
 }
 
 .recipe-card {
+    display: flex; /* This is the key change for a horizontal layout */
+    align-items: center; /* Vertically centers the image and text */
+    gap: 20px; /* Adds space between the image and the text */
+    max-width: 800px; /* Limits the width of the card on large screens */
+    margin: 0 auto; /* Centers the card horizontally */
     background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: var(--box-shadow);
@@ -229,12 +234,14 @@ main {
 }
 
 .recipe-card img {
-    width: 100%;
-    height: 400px;
+    width: 250px; /* Sets a fixed width for the image */
+    height: 250px; /* Keeps a square aspect ratio */
     object-fit: cover;
+    border-radius: 8px 0 0 8px; /* Applies border-radius to the top-left and bottom-left corners only */
 }
 
 .card-text {
+    flex-grow: 1; /* Allows the text content to fill the remaining space */
     padding: 1rem;
 }
 
@@ -430,6 +437,16 @@ body.dark-mode .close-btn {
     .search-section input {
         width: 60%;
         margin-right: 5px;
+    }
+
+    .recipe-card {
+        flex-direction: column;
+    }
+
+    .recipe-card img {
+        width: 100%;
+        height: 200px;
+        border-radius: 8px 8px 0 0;
     }
 }
 
