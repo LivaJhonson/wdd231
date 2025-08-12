@@ -1,0 +1,223 @@
+[
+    {
+      "id": 1,
+      "name": "Quick Tomato Pasta",
+      "description": "A simple, delicious pasta dish using canned tomatoes and herbs.",
+      "image": "images/pasta-tomato.webp",
+      "ingredients": [
+        "Pasta",
+        "Canned tomatoes",
+        "Garlic",
+        "Onion",
+        "Olive oil",
+        "Dried basil",
+        "Salt and pepper"
+      ],
+      "instructions": "Cook pasta according to package directions. Sauté garlic and onion in olive oil. Add canned tomatoes, basil, salt, and pepper. Simmer for 10 minutes. Toss with cooked pasta."
+    },
+    {
+      "id": 2,
+      "name": "Pantry Black Bean Burgers",
+      "description": "Hearty and flavorful burgers made entirely from pantry staples.",
+      "image": "images/black-bean-burger.webp",
+      "ingredients": [
+        "Canned black beans",
+        "Breadcrumbs",
+        "Cumin",
+        "Chili powder",
+        "Onion powder",
+        "Garlic powder",
+        "Egg"
+      ],
+      "instructions": "Mash black beans. Mix with breadcrumbs and spices. Form into patties and pan-fry until golden brown on both sides. Serve on buns."
+    },
+    {
+      "id": 3,
+      "name": "Easy Tuna Melts",
+      "description": "A classic comfort food sandwich that's quick to make for lunch.",
+      "image": "images/tuna-melt.webp",
+      "ingredients": [
+        "Canned tuna",
+        "Mayonnaise",
+        "Celery",
+        "Bread",
+        "Cheddar cheese"
+      ],
+      "instructions": "Mix tuna, mayonnaise, and chopped celery. Place on bread with a slice of cheese. Grill or pan-fry until the bread is toasted and the cheese is melted."
+    },
+    {
+      "id": 4,
+      "name": "Lentil Soup",
+      "description": "A nourishing and easy-to-make soup with vegetables and lentils.",
+      "image": "images/lentil-soup.webp",
+      "ingredients": [
+        "Dry lentils",
+        "Carrots",
+        "Celery",
+        "Onion",
+        "Vegetable broth",
+        "Garlic",
+        "Tomato paste"
+      ],
+      "instructions": "Sauté carrots, celery, and onion. Add garlic and tomato paste. Stir in lentils and vegetable broth. Simmer until lentils are tender."
+    },
+    {
+      "id": 5,
+      "name": "Chicken and Rice",
+      "description": "A one-pot meal that is both comforting and simple to prepare.",
+      "image": "images/chicken-rice.webp",
+      "ingredients": [
+        "Chicken thighs",
+        "Rice",
+        "Chicken broth",
+        "Onion",
+        "Garlic powder",
+        "Paprika"
+      ],
+      "instructions": "Season chicken with spices. Brown chicken in a pot. Add rice and broth, bring to a boil, then simmer until rice is cooked and liquid is absorbed."
+    },
+    {
+      "id": 6,
+      "name": "Cheesy Potato Bake",
+      "description": "A creamy and satisfying side dish or main course.",
+      "image": "images/potato-bake.webp",
+      "ingredients": [
+        "Potatoes",
+        "Onion",
+        "Cream of mushroom soup",
+        "Shredded cheddar cheese",
+        "Milk"
+      ],
+      "instructions": "Slice potatoes and onion. Layer in a baking dish. Mix soup, milk, and cheese, then pour over the potatoes. Bake until potatoes are tender."
+    },
+    {
+      "id": 7,
+      "name": "Pancake Stack",
+      "description": "Fluffy pancakes made from simple ingredients you likely have in your pantry.",
+      "image": "images/pancakes.webp",
+      "ingredients": [
+        "Flour",
+        "Sugar",
+        "Baking powder",
+        "Milk",
+        "Egg",
+        "Butter"
+      ],
+      "instructions": "Mix dry ingredients. In a separate bowl, whisk wet ingredients. Combine and cook on a hot griddle until bubbles form, then flip."
+    },
+    {
+      "id": 8,
+      "name": "Baked Oatmeal",
+      "description": "A great make-ahead breakfast, warm and customizable with what you have.",
+      "image": "images/baked-oatmeal.webp",
+      "ingredients": [
+        "Rolled oats",
+        "Milk",
+        "Eggs",
+        "Brown sugar",
+        "Baking powder",
+        "Cinnamon"
+      ],
+      "instructions": "Combine all ingredients and pour into a baking dish. Bake at 375°F (190°C) for 25-30 minutes until set. Serve warm."
+    },
+    {
+      "id": 9,
+      "name": "Pasta with Garlic and Oil",
+      "description": "An elegant and simple Italian dish that highlights fresh flavors.",
+      "image": "images/pasta-garlic-oil.webp",
+      "ingredients": [
+        "Spaghetti",
+        "Garlic",
+        "Olive oil",
+        "Red pepper flakes",
+        "Parsley"
+      ],
+      "instructions": "Cook spaghetti. Sauté sliced garlic in olive oil. Add red pepper flakes. Toss the cooked spaghetti with the garlic and oil mixture. Garnish with fresh parsley."
+    },
+    {
+      "id": 10,
+      "name": "Scrambled Eggs with Cheese",
+      "description": "The ultimate quick breakfast or late-night snack.",
+      "image": "images/scrambled-eggs.webp",
+      "ingredients": [
+        "Eggs",
+        "Milk",
+        "Cheddar cheese",
+        "Salt",
+        "Pepper",
+        "Butter"
+      ],
+      "instructions": "Whisk eggs, milk, salt, and pepper. Melt butter in a pan over medium heat. Pour in the egg mixture. Cook, stirring gently, until eggs are set. Stir in cheese just before serving."
+    },
+    {
+      "id": 11,
+      "name": "Simple Grilled Cheese",
+      "description": "A classic grilled cheese sandwich, perfect every time.",
+      "image": "images/grilled-cheese.webp",
+      "ingredients": [
+        "Bread",
+        "Butter",
+        "Cheese slices"
+      ],
+      "instructions": "Butter one side of each slice of bread. Place one slice butter-side down in a pan. Add cheese, top with the other slice of bread (butter-side up). Cook until golden, then flip and repeat."
+    },
+    {
+      "id": 12,
+      "name": "Baked Potato with Sour Cream",
+      "description": "A filling, easy meal with a fluffy interior and crisp skin.",
+      "image": "images/baked-potato.webp",
+      "ingredients": [
+        "Potatoes",
+        "Olive oil",
+        "Salt",
+        "Sour cream",
+        "Chives"
+      ],
+      "instructions": "Prick potatoes with a fork. Rub with olive oil and salt. Bake at 400°F (200°C) for 45-60 minutes. Slice open and top with sour cream and chives."
+    },
+    {
+      "id": 13,
+      "name": "Chicken Noodle Soup",
+      "description": "A comforting soup perfect for a cold day, made from pantry items.",
+      "image": "images/chicken-noodle-soup.webp",
+      "ingredients": [
+        "Chicken broth",
+        "Egg noodles",
+        "Shredded chicken",
+        "Carrots",
+        "Celery",
+        "Onion"
+      ],
+      "instructions": "Simmer carrots, celery, and onion in broth until tender. Add noodles and shredded chicken. Cook until noodles are done. Season to taste."
+    },
+    {
+      "id": 14,
+      "name": "Rice Pudding",
+      "description": "A sweet, creamy dessert or breakfast dish.",
+      "image": "images/rice-pudding.webp",
+      "ingredients": [
+        "Cooked rice",
+        "Milk",
+        "Sugar",
+        "Cinnamon",
+        "Vanilla extract",
+        "Raisins"
+      ],
+      "instructions": "Combine rice, milk, sugar, and cinnamon in a saucepan. Bring to a simmer and cook until thick and creamy. Stir in vanilla and raisins. Serve warm or chilled."
+    },
+    {
+      "id": 15,
+      "name": "Classic Omelette",
+      "description": "Quick, protein-rich, and endlessly versatile. Use whatever fillings you have.",
+      "image": "images/omelette.webp",
+      "ingredients": [
+        "Eggs",
+        "Milk",
+        "Butter",
+        "Salt",
+        "Pepper",
+        "Optional fillings: cheese, ham, vegetables"
+      ],
+      "instructions": "Whisk eggs, milk, salt, and pepper. Melt butter in a non-stick pan. Pour in egg mixture. Cook until edges are set, then add fillings. Fold in half and serve."
+    }
+  ]
