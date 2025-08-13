@@ -1,5 +1,4 @@
 import { setupModal, showModal } from './modal.js';
-import { applyTheme, setupThemeToggle } from './theme.js';
 
 const recipesContainer = document.getElementById('recipeGrid');
 const searchInput = document.getElementById('searchInput');
@@ -19,17 +18,19 @@ async function fetchRecipes() {
         displayRecipes(allRecipes);
     } catch (e) {
         console.error('Could not fetch recipes:', e);
-        recipesContainer.innerHTML = '<p>Failed to load recipes. Please try again later.</p>';
+        if (recipesContainer) {
+            recipesContainer.innerHTML = '<p>Failed to load recipes. Please try again later.</p>';
+        }
     }
 }
 
 // Function to display recipes on the page
 function displayRecipes(recipes) {
-    recipesContainer.innerHTML = ''; // Clear existing content
+    if (!recipesContainer) return;
+    recipesContainer.innerHTML = '';
     recipes.forEach(recipe => {
         const recipeCard = document.createElement('div');
         recipeCard.className = 'recipe-card';
-        // Use a template literal to build the card's HTML
         recipeCard.innerHTML = `
             <img src="${recipe.image}" alt="${recipe.name}" loading="lazy">
             <div class="card-text">
@@ -38,10 +39,8 @@ function displayRecipes(recipes) {
                 <button class="btn view-recipe-btn">View Recipe</button>
             </div>
         `;
-        // Attach click event to show the modal
         const viewBtn = recipeCard.querySelector('.view-recipe-btn');
         viewBtn.addEventListener('click', () => showModal(recipe));
-
         recipesContainer.appendChild(recipeCard);
     });
 }
@@ -58,20 +57,15 @@ function filterRecipes() {
 }
 
 // Event listeners for the search functionality
-searchBtn.addEventListener('click', filterRecipes);
-searchInput.addEventListener('keyup', filterRecipes);
+if (searchBtn && searchInput) {
+    searchBtn.addEventListener('click', filterRecipes);
+    searchInput.addEventListener('keyup', filterRecipes);
+}
 
-// Initial setup
+// Initial setup for the homepage only
 document.addEventListener('DOMContentLoaded', () => {
-    fetchRecipes();
-    setupModal();
-    applyTheme();
-    setupThemeToggle();
-
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
-    menuToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('show');
-    });
+    if (recipesContainer) {
+        fetchRecipes();
+        setupModal();
+    }
 });
